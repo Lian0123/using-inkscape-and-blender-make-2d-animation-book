@@ -1,7 +1,7 @@
 # 使用Inkscape + Blender 2D 的動畫製作筆記
 
 ## 簡介
-* 版本： v0.0.5
+* 版本： v0.0.6
 * 作者： [lian0123](https://github.com/Lian0123/)
 
 ## 前言
@@ -11,7 +11,8 @@
 
 由於本人非藝術相關科系出生，嚴格上來說是個理工人，所以有些流程上的錯誤與使用一些較工程的描述也請見諒。
 
-同時本人也會將文章備份一份在[github](https://github.com/Lian0123/using-inkscape-and-blender-make-2d-animation-book)，同時提供pdf版本，如果要看pdf版請[點此](https://github.com/Lian0123/using-inkscape-and-blender-make-2d-animation-book/book.pdf)下載。
+同時本人也會將文章備份一份在[github](https://github.com/Lian0123/using-inkscape-and-blender-make-2d-animation-book)，同時提供pdf版本，如果要看pdf版請[點此](
+https://drive.google.com/file/d/1JE1O3U6TaexQyiLHhvZVfdvgI0GDf9bY/view?usp=sharing)下載。
 
 ## 章節
 在此將以專案導向的方式去簡單說明，目前預計分成以下幾個章節：
