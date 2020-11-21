@@ -1,7 +1,7 @@
 # 使用Inkscape + Blender 2D 的動畫製作筆記
 
 ## 簡介
-* 版本： v0.0.1
+* 版本： v0.0.4
 * 作者： [lian0123](https://github.com/Lian0123/)
 
 ## 前言
@@ -11,7 +11,7 @@
 
 由於本人非藝術相關科系出生，嚴格上來說是個理工人，所以有些流程上的錯誤與使用一些較工程的描述也請見諒。
 
-同時本人也會將文章備份一份在github，同時提供pdf版本，如果要看pdf版請點此下載。
+同時本人也會將文章備份一份在github，同時提供pdf版本，如果要看pdf版請[點此](https://github.com/Lian0123/using-inkscape-and-blender-make-2d-animation-book/book.pdf)下載。
 
 ## 章節
 在此將以專案導向的方式去簡單說明，目前預計分成以下幾個章節：
@@ -2847,6 +2847,9 @@ Blender骨架的綁定是一個學問，其實在此講到的也只是最基本�
 ## 6. 使用Eevee Render輸出
 
 ### 6.1. 什麼是eevee？
+如先前所說的，blender提供了，3種render引擎，在此的eevee引擎為blender在2.8版本發佈新增的render引擎。
+
+eevee引擎的特色，基本上就是快速且俱有優良的輸出品質。
 
 ### 6.2. 輸出動畫
 
@@ -2875,6 +2878,10 @@ Blender骨架的綁定是一個學問，其實在此講到的也只是最基本�
     <div>我們調整我們的輸出幀率(基本上只要欺騙過人的眼睛就夠了)</div><br>
 </center>
 
+* 預設是：24幀，但要騙過人眼其實已經足夠。
+
+* 在此使用25幀的用意是讓時間推算到張數的計算上更加簡單：0.04秒一張，一般在做影片與上字幕檔的調整時會比較方便。
+
 <center>
     <img src="./source/ch6/0060.png">
     <div>點下時間重新映射(因為這樣輸出只有1點多秒)</div><br>
@@ -2900,6 +2907,9 @@ Blender骨架的綁定是一個學問，其實在此講到的也只是最基本�
     <div>此外由於new是mapping到150，所以結束幀也需設定成150幀</div><br>
 </center>
 
+
+* 請注意：時間重新映射後，輸出的結束時間也需要進行調整。
+
 <center>
     <img src="./source/ch6/0110.png">
     <div>這時我們按下算繪，再按下Render Animatrion</div><br>
@@ -2910,17 +2920,41 @@ Blender骨架的綁定是一個學問，其實在此講到的也只是最基本�
     <div>這時就會看到算繪的視窗，這時就已經在輸出了</div><br>
 </center>
 
+
 ### 6.3. 其他常見問題與補充事項
 
 #### 6.3.1. eevee透明輸出問題
+* 透明的設定，需要透過節點去實現，但節點我是有點想留到第七章再講，但還是簡單說明一下：
+    1. 先移動到要透明化的物件**物件屬性**中的**Material Properties**
+    2. 先到材質上先打開**使用節點**
+    3. 對下方的節點設定中的**Alpha參數**進行調整
+    4. 再到更下方的**設定**，將**混合模式**調成**Alpha混合**
+    5. 這時render的此物件就能顯示其透明程度了
 
-#### 6.3.2. render設定
+#### 6.3.2. 輸出的時間重新mapping後調整
+在此我們的render
 
-#### 6.3.3. 輸出的時間重新mapping後調整
 
-#### 6.3.4. 使用雲端主機去算繪的問題
+#### 6.3.3. 停止render的方式
+* 在此有3種方法停止render的輸出：
+    1. 關閉render畫面
+    2. 按下主視窗右下角render的X
+    3. 按下ctrl+z以觸發中斷
+
+* 而在ctrl+z的強制中斷時，請注意因為你中斷時，同時也會恢復上一步，所以如果是習慣以ctrl+z進行中斷的人，建議先用點物件的方式增加一次操作，以免被還原影響專案的內容。
 
 ### 6.4. 小結
+在此我們可以知道，如何使用render動畫了
+
+至此，我們已經將單一角色的動作完成，同時也輸出成動畫了，但尷尬的是原本我輸出的時間是有點慢，所以用openshot重新剪輯了一下，但後還發現要傳上pixiv的動圖只要丟圖片，在此整理了一些檔案。
+
+* 檔案：https://github.com/Lian0123/using-inkscape-and-blender-make-2d-animation-book/tree/main/source/other/cirno.blend
+
+* 影片：https://github.com/Lian0123/using-inkscape-and-blender-make-2d-animation-book/tree/main/source/export/2xExport(redo4).mp4
+
+* 圖片：https://github.com/Lian0123/using-inkscape-and-blender-make-2d-animation-book/tree/main/source/export/50/
+
+* 動圖：[]()
 
 ---
 
@@ -2929,12 +2963,18 @@ Blender骨架的綁定是一個學問，其實在此講到的也只是最基本�
 
 ---
 ## 參考文獻
-[1] 
-[2]
-[3]
-[4]
-[5]
-[6] 
+
+[1] UV貼圖相關: https://modelinghappy.com/archives/25363
+
+[2] UV貼圖相關: https://www.katsbits.com/codex/uv-editing/
 
 
+[3] 標準2D骨架綁定與應用：https://cgi.tutsplus.com/tutorials/how-to-rig-a-2d-character-in-blender-for-cutout-animation-or-explainer-videos-part-2--cms-26182
 
+[4] 實現透明化：https://artisticrender.com/how-to-use-alpha-transparent-textures-in-blender/
+
+[5] 環繞攝影機：https://www.youtube.com/watch?v=26M-D3nYiwo
+
+[6] 漸層轉向方法：https://blender.stackexchange.com/questions/26885/how-to-rotate-a-gradient-in-the-node-editor
+
+[7] 節點模式下動畫：https://blender.stackexchange.com/questions/65092/animation-in-edit-mode
